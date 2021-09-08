@@ -1,0 +1,71 @@
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="paymentDetailId" [value]="service.formData.paymentDetailId" />
+    <div class="form-group">
+        <label style="font-weight: bold; color: rgb(248, 161, 219);">CARD OWNER NAME</label>
+        <input class="form-control form-control-lg" placeholder="Full Name" name="cardOwnerName"
+            #cardOwnerName="ngModel" [(ngModel)]="service.formData.cardOwnerName"
+            required [class.invalid]="cardOwnerName.invalid && cardOwnerName.touched">
+    </div>
+
+    <div class="form-group">
+        <label style="font-weight: bold; color: rgb(248, 161, 219);">CARD NUMBER</label>
+        <input class="form-control form-control-lg" placeholder="16 Digit Card Number" name="cardNumber"
+            #cardNumber="ngModel" [(ngModel)]="service.formData.cardNumber"
+            required maxlength="16" minlength="9" [class.invalid]="cardNumber.invalid && cardNumber.touched">
+    </div>
+
+
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label style="font-weight: bold; color: rgb(248, 161, 219);">SECURITY CODE</label>
+            <input type="password" class="form-control form-control-lg" placeholder="Security Code" name="securityCode"
+                #securityCode="ngModel" [(ngModel)]="service.formData.securityCode"
+                required maxlength="3" minlength="3" [class.invalid]="securityCode.invalid && securityCode.touched">
+        </div>
+        <div class="form-group col-md-6">
+            <label style="font-weight: bold; color: rgb(248, 161, 219);">VALIDE THROUGH</label>
+            <input class="form-control form-control-lg" placeholder="MM/YY" name="expirationDate"
+                #expirationDate="ngModel" [(ngModel)]="service.formData.expirationDate"
+                required maxlength="5" minlength="5" [class.invalid]="expirationDate.invalid && expirationDate.touched">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label style="font-weight: bold; color: rgb(248, 161, 219);">POSITION</label>
+        <input class="form-control form-control-lg" placeholder="Position" name="position"
+            #position="ngModel" [(ngModel)]="service.formData.position"
+            required maxlength="20" minlength="1" [class.invalid]="position.invalid && position.touched">
+    </div>
+
+    <div class="form-group">
+        <label style="font-weight: bold; color: rgb(248, 161, 219);">Email</label>
+        <input type="email" class="form-control form-control-lg" placeholder="email" name="email"
+            #email="ngModel" [(ngModel)]="service.formData.email"
+            required maxlength="50" minlength="1" [class.invalid]="email.invalid && email.touched">
+    </div>
+
+    <div class="form-group">
+        <label style="font-weight: bold; color: rgb(248, 161, 219);">ADDRESS</label>
+        <input class="form-control form-control-lg" placeholder="Address" name="address"
+            #address="ngModel" [(ngModel)]="service.formData.address"
+            required maxlength="100" minlength="1" [class.invalid]="address.invalid && address.touched">
+    </div>
+
+    <div class="form-group">
+        <label style="font-weight: bold; color: rgb(248, 161, 219);">COLOR</label>
+        
+        <select class="form-control form-control-lg" placeholder="color" name="color"
+        #color="ngModel" [(ngModel)]="service.formData.color"
+        required maxlength="50" minlength="1" [class.invalid]="color.invalid && color.touched">
+            <option value="mau1">mau 1</option>
+            <option value="mau2">mau 2</option>
+            <option value="mau3">mau 3</option>
+        </select>
+    </div>
+
+    <div style="margin-top: 20px;" class="form-group">
+        <button class="btn btn-lg btn-primary" type="submit" [disabled]="form.invalid">SUBMIT</button>
+    </div>
+</form>
+

@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+.mat-list-item{
+    background-color: #4682B4;
+    color:white;
+    margin: auto;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    &:hover h4{
+        text-decoration: underline;
+        // text-transform: uppercase;
+    }
+}

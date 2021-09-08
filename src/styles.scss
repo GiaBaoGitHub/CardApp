@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+body,
+html{
+  height: 100%;
+}
+body{
+  margin: 0;
+  height:auto;
+}
+.form-group label {
+  color: grey;
+}
+
+.form-group input {
+  font-weight: 500;
+}
+
+.form-group input::placeholder {
+  color: #c0bdbd;
+  font-weight: 300;
+}
+
+.card{
+margin:20px 10px;
+border-radius: 25px;
+justify-content: center;
+padding: 5px;
+background-color:transparent;
+}
+.card .del{
+opacity: 0.5;
+margin-left: auto;
+margin-right: auto;
+}
+
+
+
+/*for invalid form controls*/
+input.invalid {
+  border-color: red;
+}
+
+.mau1 {
+  color:red;
+  background-image:url('./assets/anh1.jpg');
+  background-repeat:no-repeat;
+}
+.mau2{
+  color:yellow;
+  background-image:url('./assets/anh2.jpg');
+  background-repeat:no-repeat;
+}

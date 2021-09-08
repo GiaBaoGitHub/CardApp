@@ -1,0 +1,62 @@
+<div class="jumbotron py-3">
+    <h1 style="font-weight: bold; color: rgb(248, 161, 219);" class="display-4 text-center">Card App</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-5">
+        <app-payment-detail-form></app-payment-detail-form>
+    </div>
+    <div class="col-md-3">
+        <div *ngFor="let pd of service.list" class="card row">
+            <div class="{{pd.color}}">
+                <div class="col-md-12" (click)="populateForm(pd)">
+                    <i class="fas fa-user" >
+                        {{pd.cardOwnerName}}
+                    </i>
+                </div>
+
+                <div class="col-md-6" (click)="populateForm(pd)">
+                        <i class="fa fa-phone">
+                            {{pd.cardNumber}}
+                        </i>
+                </div>
+
+                <div class="col-md-6" (click)="populateForm(pd)" > 
+                    <i class="fa fa-envelope" aria-hidden="true">
+                        {{pd.email}}
+                    </i>
+                </div>
+
+                <div class="col-md-6" (click)="populateForm(pd)">
+                    <i class="fa fa-calendar"  aria-hidden="true">
+                        {{pd.expirationDate}}
+                    </i>
+                </div>
+
+                <div class="col-md-6" (click)="populateForm(pd)">
+                    <i class="fa fa-location-arrow" aria-hidden="true">
+                        {{pd.position}}
+                    </i>
+                </div>
+
+                <div class="col-md-12" (click)="populateForm(pd)" >
+                    <i class="fas fa-map">
+                        {{pd.address}}
+                    </i>
+                </div>
+
+                <div class="col-md-12" (click)="populateForm(pd)" >
+                    <i class="fas fa-map">
+                        {{pd.color}}
+                    </i>
+                </div>
+
+                
+            </div>
+            
+            <div class="del">
+            <button class="far fa-trash-alt fa-lg btn btn-primary" (click)="onDelete(pd.paymentDetailId)">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

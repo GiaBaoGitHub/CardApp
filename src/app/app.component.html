@@ -1,0 +1,43 @@
+<mat-toolbar color="primary">
+   <a *ngIf="!show" (click)="handleLogout()">Logout</a>
+  <a *ngIf="show" (click)="handleLogin()">Login</a>
+  <a style="margin:0 10px" *ngIf="show" (click)="handleSignup()">Sign up</a>
+  <img style="height: 100%; border-radius: 50%;margin: 0 10px;" :src="{{currentUsers.photoURL}}" alt="">
+  <a *ngIf="currentUsers.displayName"> {{currentUsers.displayName}} </a>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+
+
+  <div style="background: linear-gradient(red, yellow, green);" class="container card" *ngIf="!isSignedIn">
+    <div class="section-one">
+      <div class="social-links">
+        <h1 style="color: white; margin-top: 20px;">Login</h1>
+      </div>
+      <div class="main-form">
+        <input type="email" #email name="email" placeholder="Email" />
+        <input type="password" #password name="password" placeholder="Password" />
+        <pre class="error" *ngIf="error2">Error: {{error2}}</pre>
+        <a routerLink="resetpassword">Forgot password?</a>
+        <button (click)="onSignin(email.value, password.value)">Login</button>
+      </div>
+    </div>
+  
+  </div>
+  <div  style="background: linear-gradient(red, yellow, green);" class="container card" *ngIf="isSignedUp">
+    <div class="section-one">
+      <div class="social-links">
+        <h1 style="color: white; margin-top: 20px;">Sign Up</h1>
+      </div>
+      <div class="main-form">
+        <input type="email" #email name="email" placeholder="Email" />
+  
+        <input type="password" #password name="password" placeholder="Password" />
+        <pre class="error" *ngIf="error">Error: {{error}}</pre>
+        <button mat-stroked-button (click)="onSignup(email.value, password.value)">Create account</button>
+      </div>
+    </div>
+  </div>
+  
+
+
